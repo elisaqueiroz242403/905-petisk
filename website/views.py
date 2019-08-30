@@ -57,3 +57,39 @@ def cadastrar_ong(request):
 
 
     return render(request, 'cadastrar-ong.html')
+
+
+  def cadastrar_pet(request):
+    if request.method == 'POST':
+        pet = Pet()
+        pet.nome_pet = request.POST.get('nome_pet')
+        pet.raca = request.POST.get('Raça')
+        pet.peso = request.POST.get('Peso')
+        pet.porte = request.POST.get('PORTE')
+        pet.dono = request.POST.get('Nome Dono')
+        pet.save()
+
+        contexto = {
+            ()
+        }
+
+    return render(request, 'pets.html')
+
+
+def login(request):
+    if request.method == 'POST'
+    email_input = request.POST.get('email')
+
+ pessoa = Pessoa.objects.filter(email=email_input).first()
+
+        if pessoa is None:
+            contexto = {'msg': 'Puts, não encontrei'}
+            return render(request, 'login.html', contexto)
+        else:
+            contexto = {'msg': 'Olá ' + pessoa.nome + ' cadastre seu pet:',
+                        'dono': pessoa.email
+            }
+            return render(request, 'cadastrar-pet.html', contexto)
+
+
+    return render(request, 'login.html')

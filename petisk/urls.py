@@ -22,4 +22,6 @@ urlpatterns = [
     path('', views.index),
     path('pessoas/', views.pessoas),
     path('ong/cadastrar', views.cadastrar_ong)
+    path('pet/cadastrar', views.cadastrar_pets)
+    path('login', views.login)
 ]
